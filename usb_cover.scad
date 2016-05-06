@@ -1,14 +1,21 @@
-outerWidth = 18.63;
-outerHeight = 11.50;
+outerWidth = 18.56;
+outerHeight = 11.49;
+
+innerWidth = 14.90;
+innerHeight = 7.57;
+
+radius = 0.5;
+
+plugDepth = 2; 
 
 difference() {
   $fn=50;
-  translate([0.5,0,0.5])
+  translate([radius,0,radius])
   minkowski() {
-   cube([outerWidth-1,1.70, outerHeight-1], 0);
+   cube([outerWidth-(radius * 2),1.70, outerHeight- (radius * 2)], 0);
 
    rotate([90,0,0])
-   cylinder(r=0.5,h=1.70, center=true);
+   cylinder(r=radius,h=1.70, center=true);
   }
 
   translate([(outerWidth-1)/2,2.3,outerHeight/2])
@@ -17,34 +24,39 @@ difference() {
 }
 
 
-
-innerWidth = 14.90;
-innerHeight = 7.57;
-
-widthDiff = (outerWidth - innerWidth)/2;
-heightDiff = (outerHeight - innerHeight)/2;
-
-plugDepth = 2.5;
-
 difference() {
-  translate([widthDiff,0,heightDiff])
-  cube([innerWidth,plugDepth, innerHeight], 0);
+  octogon();
+    
+  translate([outerWidth/8,1.25,outerHeight/8])
+  scale(0.75)
+  octogon();
+}
 
-  len = 2.18;
 
-  translate([widthDiff,0,heightDiff])
-  rotate([0,45,0])
-  cube([len, 25, len], center=true);
+module octogon(){
+  widthDiff = (outerWidth - innerWidth)/2;
+  heightDiff = (outerHeight - innerHeight)/2;
+  
+  difference() {
+    translate([widthDiff,0,heightDiff])
+    cube([innerWidth,plugDepth, innerHeight], 0);
 
-  translate([widthDiff,0,heightDiff+innerHeight])
-  rotate([0,45,0])
-  cube([len, 25, len], center=true);
+    len = 2.18;
 
-  translate([widthDiff+innerWidth,0,heightDiff+innerHeight])
-  rotate([0,45,0])
-  cube([len, 25, len], center=true);
+    translate([widthDiff,0,heightDiff])
+    rotate([0,45,0])
+    cube([len, 25, len], center=true);
 
-  translate([widthDiff+innerWidth,0,heightDiff])
-  rotate([0,45,0])
-  cube([len, 25, len], center=true);
+    translate([widthDiff,0,heightDiff+innerHeight])
+    rotate([0,45,0])
+    cube([len, 25, len], center=true);
+
+    translate([widthDiff+innerWidth,0,heightDiff+innerHeight])
+    rotate([0,45,0])
+    cube([len, 25, len], center=true);
+
+    translate([widthDiff+innerWidth,0,heightDiff])
+    rotate([0,45,0])
+    cube([len, 25, len], center=true);
+  }
 }
