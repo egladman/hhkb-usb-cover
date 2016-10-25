@@ -1,12 +1,12 @@
 # HHKB USB Cover
 
-[demo](https://github.com/egladman/hhkb-usb-cover/blob/master/usb_cover.stl)
+[3D View](https://github.com/egladman/hhkb-usb-cover/blob/master/usb_cover.stl)
 
 <br>
 
-This is my first attempt at modeling a cover for each of the unused ports on the Happy Hacking Keyboard while using Hasu's controller.
+This is a cover for each of the unused usb ports on the Happy Hacking Keyboard with Hasu's controller.
 
-*I have yet to print this, so don't expect perfection*
+![HHKB USB Cover](example.jpg "HHKB USB Cover")
 
 <br>
 

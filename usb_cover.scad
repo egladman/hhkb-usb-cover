@@ -4,7 +4,7 @@ outerHeight = 11.49;
 innerWidth = 14.90;
 innerHeight = 7.57;
 
-radius = 0.5;
+radius = 1;
 
 plugDepth = 1.75; 
 
@@ -19,7 +19,7 @@ difference() {
   }
 
   translate([(outerWidth-1)/2,2.10,outerHeight/2])
-  rotate([-3.65,0,0])
+  rotate([-3.8,0,0])
   cube([outerWidth+2,3.65, outerHeight+10], center=true);
 }
 
