@@ -23,10 +23,10 @@ difference() {
   cube([outerWidth+2,3.65, outerHeight+10], center=true);
 }
 
-translate([widthDiff-.4,plugDepth,(outerHeight/2)])
+translate([widthDiff-.5,plugDepth,(outerHeight/2)])
 clip();
 
-translate([-widthDiff+.4+outerWidth,plugDepth,(outerHeight/2)])
+translate([-widthDiff+.5+outerWidth,plugDepth,(outerHeight/2)])
 rotate([0,180,0])
 clip();
 
@@ -83,7 +83,7 @@ module clip(){
     polyhedron ( points = [[0, -1, 3], [0, 1, 3], [0, 1, 0], [0, -1, 0], [3, -1, 3], [3, 1, 3]], 
     faces = [[0,3,2], [0,2,1], [3,0,4], [1,2,5], [0,5,4], [0,1,5],  [5,2,4], [4,2,3], ]);
   
-    translate([3.25,0,0])
+    translate([3.35,0,0])
     cube([4, 4, 10], center=true);  
   }
 }
