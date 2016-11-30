@@ -4,10 +4,18 @@ outerHeight = 11.49;
 innerWidth = 14.90;
 innerHeight = 7.57;
 
+widthDiff = (outerWidth - innerWidth)/2;
+heightDiff = (outerHeight - innerHeight)/2;
+
 radius = 1;
 
 plugDepth = 1.75; 
 
+translate([0,outerHeight,.85])
+rotate([90,0,0])
+cover();
+
+module cover(){
 difference() {
   $fn=50;
   translate([radius,0,radius])
@@ -48,8 +56,8 @@ difference() {
   cube([16, 5, .625], center=true);
 }
 
-widthDiff = (outerWidth - innerWidth)/2;
-heightDiff = (outerHeight - innerHeight)/2;
+
+}
 
 module octogon(){
   difference() {
